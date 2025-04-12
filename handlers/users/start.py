@@ -195,7 +195,6 @@ async def show_pending_requests(message: types.Message):
 📅 Ariza Sanasi: {request['data']}
 📌 So'rov ID: {request['id']}
             """
-            # Create inline buttons for each request
             tasdiqlash_buttons = InlineKeyboardMarkup()
             tasdiqlash_buttons.add(InlineKeyboardButton("✔️ Tasdiqlash", callback_data=f"approve_{request['id']}"))
             tasdiqlash_buttons.add(InlineKeyboardButton("❌ Rad etish", callback_data=f"reject_{request['id']}"))
