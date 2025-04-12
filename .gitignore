@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+user_data.db
 
 # Distribution / packaging
 .Python
