@@ -143,8 +143,10 @@ Ruxsat so'rov holati:
 📅 Ariza Sanasi: {user_data['data']}
 Status: {status_text}
 """
-        await bot.send_message(GROUP_ID, message_for_group, parse_mode="HTML")
-        
+        if status_text == 'Ruxsat berildi':
+            await bot.send_message(GROUP_ID, message_for_group, parse_mode="HTML")
+        else:
+            pass
         # Holatni sorov_table da yangilash
         update_status(request_id, status_text)
         
@@ -175,7 +177,7 @@ Status: {status_text}
         await callback_query.answer(f"So'rov {status_text}")
 
 # Add command to show all pending requests
-@dp.message_handler(commands=["sorovs"])
+@dp.message_handler(commands=["waits"])
 async def show_pending_requests(message: types.Message):
     """Show all pending requests to admin"""
     if message.chat.id == int(ADMIN_ID):
